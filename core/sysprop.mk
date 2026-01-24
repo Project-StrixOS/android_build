@@ -36,10 +36,10 @@ define generate-common-build-props
     echo "# These properties identify this partition image." >> $(2);\
     echo "####################################" >> $(2);\
     echo "ro.product.$(1).brand=$(PRODUCT_BRAND)" >> $(2);\
-    echo "ro.product.$(1).device=$${DeviceName:-$(TARGET_DEVICE)}" >> $(2);\
+    echo "ro.product.$(1).device=$(TARGET_DEVICE)" >> $(2);\
     echo "ro.product.$(1).manufacturer=$(PRODUCT_MANUFACTURER)" >> $(2);\
     echo "ro.product.$(1).model=$${ProductModel:-$(PRODUCT_MODEL)}" >> $(2);\
-    echo "ro.product.$(1).name=$${DeviceProduct:-$(TARGET_PRODUCT)}" >> $(2);\
+    echo "ro.product.$(1).name=$(PRODUCT_NAME)" >> $(2);\
     if [ -n "$(strip $(PRODUCT_MODEL_FOR_ATTESTATION))" ]; then \
         echo "ro.product.model_for_attestation=$(PRODUCT_MODEL_FOR_ATTESTATION)" >> $(2);\
     fi; \
